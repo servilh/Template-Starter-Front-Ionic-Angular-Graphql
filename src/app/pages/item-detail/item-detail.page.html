@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Item Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let prp of getEntries()">
+    <ion-label position="stacked">{{prp}}</ion-label>
+    <ion-input [(ngModel)]="item[prp]" [readonly]="readonly || !editablePrps.includes(prp)"></ion-input>
+  </ion-item>
+</ion-content>
+
+<ion-footer collapse="fade">
+  <ion-toolbar>
+    <ion-button (click)="readonly=!readonly" expand="full" >{{readonly ? "Edit" : "Cancel"}}</ion-button>
+    <ion-button (click)="deleteDataHandler()" expand="full"  *ngIf="readonly">Delete</ion-button>
+    <ion-button (click)="updateDataHandler()" expand="full"  *ngIf="!readonly">Save</ion-button>
+  </ion-toolbar>
+</ion-footer>
