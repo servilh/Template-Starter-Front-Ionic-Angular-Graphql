@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ItemDetailPageRoutingModule } from './item-detail-routing.module';
 
 import { ItemDetailPage } from './item-detail.page';
+import { CustomComponentsModule } from 'src/app/components/custom-components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ItemDetailPageRoutingModule
+    ItemDetailPageRoutingModule,
+    CustomComponentsModule
   ],
   declarations: [ItemDetailPage]
 })

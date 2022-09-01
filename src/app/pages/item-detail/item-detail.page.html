@@ -8,10 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-item *ngFor="let prp of getEntries()">
-    <ion-label position="stacked">{{prp}}</ion-label>
-    <ion-input [(ngModel)]="item[prp]" [readonly]="readonly || !editablePrps.includes(prp)"></ion-input>
-  </ion-item>
+  <app-dynamic-item-detail [item]="item" [readonly] ="readonly" [keysAlwaysReadOnly]="['_id']"></app-dynamic-item-detail>
 </ion-content>
 
 <ion-footer collapse="fade">

@@ -28,12 +28,7 @@ export class ItemDetailPage implements OnInit {
       });
 
   }
-  public getEntries() {
-    return Object.keys(this.item);
-  }
-  public getItemType() {
-    //"date" ｜ "datetime-local" ｜ "email" ｜ "month" ｜ "number" ｜ "password" ｜ "search" ｜ "tel" ｜ "text" ｜ "time" ｜ "url" ｜ "week"
-  }
+  
 
   public updateDataHandler() {
     this.dataSrv.Update(this.item._id, this.item).subscribe(r=>{
