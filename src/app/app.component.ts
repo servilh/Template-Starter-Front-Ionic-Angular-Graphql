@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -14,5 +15,17 @@ export class AppComponent {
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  public language:string = 'en';
+
+  constructor(private translate: TranslateService) {
+    this.initializeApp();
+  }
+  
+  initializeApp() {
+    this.translate.setDefaultLang(this.language); 
+  }
+  languageChange(value) {  // add this 
+    this.language = value;
+    this.translate.use(this.language).subscribe(c=>{});  // add this
+  }
 }
