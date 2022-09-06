@@ -2,6 +2,12 @@
     
     "tab1": {
       "tabName": "Tab One"
+    },
+    "entity.Game":{
+      "name": "Name",
+      "price": "Price",
+      "category":"Category"
+
     }
     
   }

@@ -1,7 +1,11 @@
 {
-    "Language": "Español",
-    "languageChangePlaceholder": "Cambiar Idioma",
     "tab1": {
       "tabName": "pestaña uno"
+    },
+    "entity.Game":{
+      "name": "Name",
+      "price": "Price",
+      "category":"Category"
+
     }
   }

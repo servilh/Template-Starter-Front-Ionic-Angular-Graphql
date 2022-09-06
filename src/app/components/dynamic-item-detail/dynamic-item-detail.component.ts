@@ -1,20 +1,22 @@
-import { Component, Input, OnInit } from '@angular/core';
-import Game from '../../../../../common/src/models/game';
-
+import { Component, Input, OnInit } from '@angular/core'; 
 @Component({
   selector: 'app-dynamic-item-detail',
   templateUrl: './dynamic-item-detail.component.html',
   styleUrls: ['./dynamic-item-detail.component.scss'],
 })
 export class DynamicItemDetailComponent implements OnInit {
-  @Input('item') item: Game;
+  @Input('item') item: Object;
   @Input('keys2show') keys2show: Array<string>;
   @Input('keysAlwaysReadOnly') keysAlwaysReadOnly: Array<string>;
   @Input('readonly') readonly: boolean;
-  
+  @Input('itemType') itemType:string;
+  public keyLanguage: string;
+
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.keyLanguage = "entity." + this.itemType; 
+  }
 
   public getEntries() {
     //if keys2show have keys return if not we show all of the object
