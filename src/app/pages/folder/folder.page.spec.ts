@@ -1,7 +1,9 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, convertToParamMap, RouterModule } from '@angular/router';
 import { FolderPage } from './folder.page';
+import { GamesService } from 'src/app/services/games.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('FolderPage', () => {
   let component: FolderPage;
@@ -9,8 +11,19 @@ describe('FolderPage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ FolderPage ],
-      imports: [IonicModule.forRoot(), RouterModule.forRoot([])]
+      declarations: [FolderPage],
+      providers: [
+        {
+        provide: ActivatedRoute,
+        useValue: {
+          snapshot: {
+            paramMap: { get: () => "12" },
+          }
+        },
+      }, 
+      GamesService],
+      imports: [IonicModule.forRoot(), RouterModule.forRoot([]), 
+        HttpClientModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(FolderPage);

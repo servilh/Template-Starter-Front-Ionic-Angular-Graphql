@@ -10,7 +10,7 @@ import Game from '../../../../../common/src/models/game';
 })
 export class FolderPage implements OnInit {
   public folder: string;
-  public listItems: Array<Game>;
+  public listItems: Array<Game> = [];
 
   constructor(private activatedRoute: ActivatedRoute, private gameSrv: GamesService) { }
 
