@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GamesService } from 'src/app/services/games.service';
+import { GamesGqlService } from 'src/app/services/games-gql.service';
 import Game from '../../../../../../common/src/models/game';
 
 @Component({
@@ -11,13 +11,17 @@ import Game from '../../../../../../common/src/models/game';
 export class FolderPage implements OnInit {
   public folder: string;
   public listItems: Array<Game> = [];
+  public loading: boolean = false;
 
-  constructor(private activatedRoute: ActivatedRoute, private gameSrv: GamesService) { }
+  constructor(private activatedRoute: ActivatedRoute, private gameSrv: GamesGqlService) { }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
-    this.gameSrv.GetItems().subscribe(p=>{
-      this.listItems = p; 
+    debugger;
+    this.gameSrv.getItems().subscribe(res=>{
+      debugger;
+      this.listItems = res.data?.getGames; 
+      this.loading = res.loading; 
     });
   }
 
