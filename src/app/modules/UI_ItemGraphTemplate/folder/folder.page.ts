@@ -17,9 +17,7 @@ export class FolderPage implements OnInit {
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
-    debugger;
     this.gameSrv.getItems().subscribe(res=>{
-      debugger;
       this.listItems = res.data; 
       this.loading = res.loading; 
     });
