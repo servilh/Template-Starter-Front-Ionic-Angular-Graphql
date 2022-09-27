@@ -41,7 +41,7 @@ describe('ItemDetailPage', () => {
 
     fixture = TestBed.createComponent(ItemDetailPage);
     component = fixture.componentInstance;
-    component.item = new Game("",2,"");
+    component.item = { name: "", price: 2, category: "" } as Game;
     fixture.detectChanges();
   }));
 

@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./item-new-form.page.scss'],
 })
 export class ItemNewFormPage implements OnInit {
-  public newGame: Game = new Game('name', 0.0, 'cat');
+  public newGame: Game = {name: 'name', price: 0.0, category: 'cat'};
 
   constructor(private dataService: GamesService, private location: Location) { }
 

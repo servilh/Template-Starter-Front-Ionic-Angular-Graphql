@@ -20,7 +20,9 @@ describe('DynamicItemDetailComponent', () => {
 
     fixture = TestBed.createComponent(DynamicItemDetailComponent);
     component = fixture.componentInstance;
-    component.item = new Game('name', 2, 'cat');
+    component.item =  {
+      name: 'name', price: 2, category: 'cat'
+    } as Game;
     component.readonly = false;
     component.itemType = 'Game';
     component.keysAlwaysReadOnly =[];
