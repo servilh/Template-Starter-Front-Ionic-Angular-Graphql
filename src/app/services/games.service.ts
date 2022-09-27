@@ -57,7 +57,6 @@ export class GamesService {
   }
   // Error handling
   errorHandl(error) {
-    debugger;
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       // Get client-side error

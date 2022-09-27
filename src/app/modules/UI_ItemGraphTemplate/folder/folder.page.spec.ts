@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { ActivatedRoute, convertToParamMap, RouterModule } from '@angular/router';
 import { FolderPage } from './folder.page';
-import { GamesService } from 'src/app/services/games.service';
+import { GamesService } from 'src/app/modules/UI_ItemRestTemplate/services/games.service';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('FolderPage', () => {

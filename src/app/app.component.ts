@@ -7,8 +7,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
+    { title: 'REST example', url: '/folder/rest', icon: 'mail' },
+    { title: 'GRAPHQL example', url: '/graphql-folder/Graph', icon: 'paper-plane' },
     { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
     { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
     { title: 'Trash', url: '/folder/Trash', icon: 'trash' },

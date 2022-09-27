@@ -8,28 +8,17 @@ import { IonicModule } from '@ionic/angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { CustomComponentsModule } from 'src/app/components/custom-components.module';
 import { GamesService } from 'src/app/services/games.service';
-import Game from '../../../../../common/src/models/game';
-import { ItemDetailPageRoutingModule } from './item-detail-routing.module';
+import Game from '../../../../../../common/src/models/game';
+ 
+import { ItemNewFormPage } from './item-new-form.page';
 
-import { ItemDetailPage } from './item-detail.page';
-
-describe('ItemDetailPage', () => {
-  let component: ItemDetailPage;
-  let fixture: ComponentFixture<ItemDetailPage>;
+describe('ItemNewFormPage', () => {
+  let component: ItemNewFormPage;
+  let fixture: ComponentFixture<ItemNewFormPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ItemDetailPage],
-      providers: [{
-          provide: ActivatedRoute,
-          useValue: {
-            snapshot: {
-              paramMap: { get: () => "62a74144f8fd7ef778a541e1" },
-            }
-          }
-        },
-        GamesService,
-        Location],
+      declarations: [ ItemNewFormPage ],
       imports: [IonicModule.forRoot(),
         CommonModule,
         FormsModule,
@@ -39,9 +28,8 @@ describe('ItemDetailPage', () => {
         RouterModule.forRoot([])  ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ItemDetailPage);
+    fixture = TestBed.createComponent(ItemNewFormPage);
     component = fixture.componentInstance;
-    component.item = { name: "", price: 2, category: "" } as Game;
     fixture.detectChanges();
   }));
 

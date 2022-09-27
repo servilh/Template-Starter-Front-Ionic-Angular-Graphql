@@ -8,7 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { CustomComponentsModule } from 'src/app/components/custom-components.module';
 import { GamesService } from 'src/app/services/games.service';
-import Game from '../../../../../common/src/models/game';
+import Game from '../../../../../../common/src/models/game';
  
 import { ItemNewFormPage } from './item-new-form.page';
 

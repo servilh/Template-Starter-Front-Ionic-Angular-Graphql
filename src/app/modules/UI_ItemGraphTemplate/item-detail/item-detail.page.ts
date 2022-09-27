@@ -2,7 +2,7 @@ import { Location } from '@angular/common';
 import { Component, DebugElement, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'; 
 import { GamesService } from 'src/app/services/games.service'; 
-import Game from '../../../../../common/src/models/game';
+import Game from '../../../../../../common/src/models/game';
 
 @Component({
   selector: 'app-item-detail',

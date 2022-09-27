@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GamesService } from 'src/app/services/games.service';
-import Game from '../../../../../common/src/models/game';
+import Game from '../../../../../../common/src/models/game';
 
 @Component({
   selector: 'app-folder',

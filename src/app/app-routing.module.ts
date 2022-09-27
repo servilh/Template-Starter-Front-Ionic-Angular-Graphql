@@ -9,15 +9,27 @@ const routes: Routes = [
   },
   {
     path: 'folder/:id',
-    loadChildren: () => import('./pages/folder/folder.module').then( m => m.FolderPageModule)
+    loadChildren: () => import('./modules/UI_ItemRestTemplate/folder/folder.module').then( m => m.FolderPageModule)
   },
   {
     path: 'item-new-form',
-    loadChildren: () => import('./pages/item-new-form/item-new-form.module').then( m => m.ItemNewFormPageModule)
+    loadChildren: () => import('./modules/UI_ItemRestTemplate/item-new-form/item-new-form.module').then( m => m.ItemNewFormPageModule)
   },
   {
     path: 'item-detail/:id',
-    loadChildren: () => import('./pages/item-detail/item-detail.module').then( m => m.ItemDetailPageModule)
+    loadChildren: () => import('./modules/UI_ItemRestTemplate/item-detail/item-detail.module').then( m => m.ItemDetailPageModule)
+  },
+  {
+    path: 'graphql-folder/:id',
+    loadChildren: () => import('./modules/UI_ItemGraphTemplate/folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'graphql-item-new-form',
+    loadChildren: () => import('./modules/UI_ItemGraphTemplate/item-new-form/item-new-form.module').then( m => m.ItemNewFormPageModule)
+  },
+  {
+    path: 'graphql-item-detail/:id',
+    loadChildren: () => import('./modules/UI_ItemGraphTemplate/item-detail/item-detail.module').then( m => m.ItemDetailPageModule)
   }
 ];
 
