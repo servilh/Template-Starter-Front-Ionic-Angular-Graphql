@@ -20,7 +20,7 @@ export class FolderPage implements OnInit {
     debugger;
     this.gameSrv.getItems().subscribe(res=>{
       debugger;
-      this.listItems = res.data?.getGames; 
+      this.listItems = res.data; 
       this.loading = res.loading; 
     });
   }
