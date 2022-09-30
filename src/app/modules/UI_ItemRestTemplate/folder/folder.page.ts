@@ -14,18 +14,11 @@ export class FolderPage implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private gameSrv: GamesService) { }
 
-  ngOnInit() {
+  ngOnInit() { 
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
     this.gameSrv.GetItems().subscribe(p=>{
       this.listItems = p; 
     });
   }
-
-  public newItemHandler() {
-
-  }
-
-  public itemDetailHandler() {
-    
-  }
+  
 }

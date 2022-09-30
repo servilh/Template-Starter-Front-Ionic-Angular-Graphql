@@ -14,7 +14,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-item *ngFor="let item of listItems; index as i; first as isFirst" [routerLink]="'/item-detail/' + item._id"
+  <ion-item *ngFor="let item of listItems; index as i; first as isFirst" [routerLink]="'/graphql-item-detail/' + item._id"
     lines="inset" routerDirection="root" routerLinkActive="selected" detail>
     <ion-label>
       {{item.name}}
@@ -24,7 +24,7 @@
 
 <ion-footer collapse="fade">
   <ion-toolbar>
-    <ion-button (click)="newItemHandler()" routerDirection="root" routerLink="/item-new-form"
+    <ion-button (click)="newItemHandler()" routerDirection="root" routerLink="/graphql-item-new-form"
       routerLinkActive="selected" expand="full">NEW</ion-button>
   </ion-toolbar>
 </ion-footer>

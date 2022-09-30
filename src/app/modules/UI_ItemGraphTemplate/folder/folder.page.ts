@@ -17,17 +17,9 @@ export class FolderPage implements OnInit {
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
-    this.gameSrv.getItems().subscribe(res=>{
+    this.gameSrv.GetItems().subscribe(res=>{
       this.listItems = res.data; 
       this.loading = res.loading; 
     });
-  }
-
-  public newItemHandler() {
-
-  }
-
-  public itemDetailHandler() {
-    
   }
 }

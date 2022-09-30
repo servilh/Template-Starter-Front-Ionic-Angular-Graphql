@@ -20,7 +20,6 @@ describe('GamesService', () => {
   it('#GetItems should return value from observable',
     (done: DoneFn) => {
     service.GetItems().subscribe(value => {
-      debugger
       expect(value.length).toBeGreaterThan(0);
       done();
     });

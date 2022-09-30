@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
-import { Component, DebugElement, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router'; 
-import { GamesService } from 'src/app/services/games.service'; 
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { GamesGqlService } from 'src/app/services/games-gql.service';
 import Game from '../../../../../../common/src/models/game';
 
 @Component({
@@ -13,38 +13,37 @@ export class ItemDetailPage implements OnInit {
   public item: Game;
   public readonly: boolean;
   public editablePrps: Array<string> = ['name', 'category', 'price'];
-  constructor(private activatedRoute: ActivatedRoute, private dataSrv: GamesService, private location: Location) { }
+  constructor(private activatedRoute: ActivatedRoute, private dataSrv: GamesGqlService, private location: Location) { }
 
   ngOnInit() {
     var id = this.activatedRoute.snapshot.paramMap.get('id');
-   
+
     this.readonly = true;
 
     if (this.dataSrv.gamesCache)
-      this.item = this.dataSrv.gamesCache.find(x => x._id.toString() == id);
+      this.item = { ... this.dataSrv.gamesCache.find(x => x._id.toString() == id) };
     else
       this.dataSrv.GetItem(id).subscribe(i => {
-        this.item = i;
+        this.item = i.data;
       });
 
   }
   
-
   public updateDataHandler() {
-    this.dataSrv.Update(this.item._id, this.item).subscribe(r=>{
+    this.dataSrv.Upsert(this.item).subscribe(r => {
       this.goBack();
     });
   }
   public deleteDataHandler() {
-    this.dataSrv.Delete(this.item._id).subscribe(r=>{
+    this.dataSrv.Delete(this.item._id.toString()).subscribe(r => {
       this.goBack();
     });
   }
 
-  public change2EditDataHandler(){
+  public change2EditDataHandler() {
     this.readonly = !this.readonly;
   }
-  
+
   private goBack() {
     this.location.back();
   }
