@@ -38,7 +38,17 @@ import { InMemoryCache } from '@apollo/client/core';
             cache: new InMemoryCache(),
             link: httpLink.create({
               uri: 'http://localhost:4000/graphql',
+              
             }),
+            //IF WE DON'T WANT CACHE
+            // defaultOptions: {
+            //   query: {
+            //     fetchPolicy: 'no-cache',
+            //   },
+            //   watchQuery: {
+            //     fetchPolicy: 'no-cache',
+            //   },
+            // },
           },
         };
       },
